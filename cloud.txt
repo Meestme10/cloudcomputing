@@ -1,0 +1,25 @@
+1.
+
+create table customer (
+	customer_id int primary key, 
+	name text, 
+	city text
+);
+
+2.
+
+insert into customer (customer_id, name, city)
+	values(1, 'Alice', 'New York'),
+		(2, 'Bob', 'London'),
+		(3, 'Eve', 'Paris');
+
+3. 
+
+create table orders(
+	order_id int primary key,
+	customer_id int,
+	order_date date,
+	constraint fk_cutomer foreign key(customer_id) references customer(customer_id)
+);
+
+4. insert into orders(
